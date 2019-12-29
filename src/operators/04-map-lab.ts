@@ -34,7 +34,7 @@ scroll$.subscribe(console.log)
 
 const progress$ = scroll$.pipe(
     pluck('target', 'documentElement'),
-    map((doc) => doc.scrollTop/doc.scrollTopMax * 100),
+    map((doc) => doc['scrollTop'] /doc['scrollTopMax'] * 100),
 );
 
 progress$.subscribe(porcentaje => {
